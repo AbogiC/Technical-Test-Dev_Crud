@@ -79,4 +79,8 @@ public class EmployeeEntity {
     public void setIs_delete(Integer is_delete) {
         this.is_delete = is_delete;
     }
+
+    public void setPositionID(String position_id) {
+        this.setPositionID(position_id);
+    }
 }
