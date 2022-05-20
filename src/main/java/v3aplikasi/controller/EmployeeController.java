@@ -44,7 +44,7 @@ public class EmployeeController {
             request.setAttribute("action", "insert");
         }
         defaultList(request);
-        return "employeeEntity-list";
+        return request.getQueryString();
     }
 
     public void defaultList(HttpServletRequest request){
@@ -57,15 +57,5 @@ public class EmployeeController {
             request.setAttribute("errorMessage", e.getMessage());
         }
         request.setAttribute("employeeEntityCollection", employeeEntityCollection);
-    }
-
-    public EmployeeDto convertToDto(EmployeeEntity entity){
-        EmployeeDto dto = new EmployeeDto();
-        dto.setName(entity.getName());
-        dto.setId_number(entity.getId_number());
-        dto.setGender(entity.getGender());
-        dto.setBirth_date(entity.getBirth_date());
-        dto.setIs_delete(entity.getIs_delete());
-        return dto;
     }
 }
